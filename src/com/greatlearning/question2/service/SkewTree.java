@@ -9,8 +9,7 @@ public class SkewTree {
 		if (root == null)
 			return;
 		
-		Node rightNode = root.right;
-		// Traverse left
+		// Skew left
 		skewFromRoot(root.left);
 		
 		// Set leftmost as anchor and previous, move up and for other roots set previous.right as the root and .left as null, then set previous as the root and move on. 
@@ -24,7 +23,7 @@ public class SkewTree {
 			previous = root;
 		}
 		
-		skewFromRoot(rightNode);
+		skewFromRoot(root.right);
 	}
 	
 	public void displayTree(Node root) {
